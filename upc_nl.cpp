@@ -19,7 +19,7 @@ UPCNL::UPCNL() :
 Channels UPCNL::GetChannels() const
 {
 	HttpData httpData;
-	std::string channelsString = httpData.GetUrlContents("https://www.horizon.tv/oesp/api/NL/nld/web/channels");
+	std::string channelsString = httpData.GetUrlContents("https://www.horizon.tv/oesp/api/CH/fra/web/channels");
 
 	Channels channels = LoadFromJSON(channelsString);
 	std::sort(channels.begin(), channels.end());
@@ -91,7 +91,7 @@ void UPCNL::GetChannelPrograms(Channel& channel, const boost::shared_ptr<HttpDat
 	}
 
 	std::stringstream ss;
-	ss << "https://www.horizon.tv/oesp/api/NL/nld/web/listings?byStationId=" << channel.InternalId() << "&byStartTime=" << start << "000~&byEndTime=~" << end << "000&sort=startTime";
+	ss << "https://www.horizon.tv/oesp/api/CH/fra/web/listings?byStationId=" << channel.InternalId() << "&byStartTime=" << start << "000~&byEndTime=~" << end << "000&sort=startTime";
 	std::string programString = pHttpData->GetUrlContents(ss.str());
 
 	boost::unique_lock<boost::mutex> lock(m_mutex);

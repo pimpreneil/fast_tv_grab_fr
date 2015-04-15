@@ -22,11 +22,7 @@ std::string Channel::GetXML() const
 	std::stringstream ss;
 
 	ss << "  <channel id=\"" << m_id << "\">" << std::endl;
-	ss << "    <display-name lang=\"nl\">" << m_name << "</display-name>" << std::endl;
-
-	if (!m_iconUrl.empty())
-		ss << "    <icon src=\"" << m_iconUrl << "\" />" << std::endl;
-
+	ss << "    <display-name lang=\"fr\">" << m_name << "</display-name>" << std::endl;
 	ss << "  </channel>" << std::endl;
 
 	return ss.str();

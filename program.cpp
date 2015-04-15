@@ -46,26 +46,26 @@ std::string Program::GetXML() const
 		{
 			if (!subTitle)
 			{
-				ss << "    <title lang=\"nl\">" << *it << "</title>" << std::endl;
+				ss << "    <title lang=\"fr\">" << *it << "</title>" << std::endl;
 				subTitle = true;
 			}
 			else
 			{
-				ss << "    <sub-title lang=\"nl\">" << *it << "</sub-title>" << std::endl;
+				ss << "    <sub-title lang=\"fr\">" << *it << "</sub-title>" << std::endl;
 			}
 		}
 	}
 	else
 	{
-		ss << "    <title lang=\"nl\">" << m_title << "</title>" << std::endl;
-		ss << "    <sub-title lang=\"nl\">" << m_subTitle << "</sub-title>" << std::endl;
+		ss << "    <title lang=\"fr\">" << m_title << "</title>" << std::endl;
+		ss << "    <sub-title lang=\"fr\">" << m_subTitle << "</sub-title>" << std::endl;
 	}
 
 	if (!m_country.empty())
 		ss << "    <country>" << m_country << "</country>" << std::endl;
 
 	if (!m_synopsis.empty())
-		ss << "    <desc lang=\"nl\">" << m_synopsis << "</desc>" << std::endl;
+		ss << "    <desc lang=\"fr\">" << m_synopsis << "</desc>" << std::endl;
 
 	if (!m_genre.empty())
 		ss << "    <category lang=\"en\">" << m_genre << "</category>" << std::endl;
